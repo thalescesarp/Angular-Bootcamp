@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ChatService } from '../../chat/chat.service';
 
 @Component({
   selector: 'app-chat-item',
@@ -9,9 +10,11 @@ export class ChatItemComponent implements OnInit {
 
   @Input() public message: string;
   public date: Date;
+  public user: string;
 
-  constructor() {
+  constructor(chatService: ChatService) {
     this.date = new Date();
+    this.user = chatService.user;
    }
 
   ngOnInit() {

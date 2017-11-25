@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatItemComponent } from './chat/chat-item/chat-item.component';
+import { ChatService } from './chat/chat.service';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { ChatItemComponent } from './chat/chat-item/chat-item.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
