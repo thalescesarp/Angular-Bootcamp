@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class ChatService {
 
   private user: string = '';
+  private serverURL: string = 'http://bootcamp.us-east-1.elasticbeanstalk.com/';
 
   get userName(): string {
     return this.user;
