@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-chat-header',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatHeaderComponent implements OnInit {
 
-  constructor() { }
+  public user: string = '';
+  public logTime: Date;
+
+  constructor(chatService: ChatService) { 
+    this.logTime = chatService.logTime;
+  }
 
   ngOnInit() {
   }

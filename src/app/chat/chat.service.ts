@@ -7,6 +7,7 @@ export class ChatService {
   private _user: string = '';
   private _serverURL: string = 'http://172.24.30.24:3000/';
   private _server: any;
+  private _logTime: Date;
 
   get userName(): string {
     return this._user;
@@ -16,9 +17,13 @@ export class ChatService {
     return this._server;
   }
 
+  get logTime(): Date {
+    return this._logTime;
+  }
+
   constructor() {
     let storedName: string = sessionStorage.getItem('name');
-    
+
     if (!storedName) {
       this._user = prompt("What is your name?");
       sessionStorage.setItem('name', this._user);
@@ -27,6 +32,7 @@ export class ChatService {
     }
 
     this._server = io(this._serverURL);
+    this._logTime = new Date();
   }
 
 }
