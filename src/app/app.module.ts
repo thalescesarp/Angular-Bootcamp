@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatItemComponent } from './chat/chat-item/chat-item.component';
 import { ChatService } from './chat/chat.service';
+import { ChatHeaderComponent } from './chat/chat-header/chat-header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    ChatItemComponent
+    ChatItemComponent,
+    ChatHeaderComponent
   ],
   imports: [
     BrowserModule,
