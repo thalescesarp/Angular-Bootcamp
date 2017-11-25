@@ -6,14 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public messages: string[] = [];
-  public insertedMessage: string = '';
 
-  constructor () {
-  }
-
-  public sendMessage(): void {
-    this.messages.push(this.insertedMessage);
-    this.insertedMessage = '';
-  }
 }

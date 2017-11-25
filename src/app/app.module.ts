@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
+import { ChatItemComponent } from './chat/chat-item/chat-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
+    ChatComponent,
+    ChatItemComponent
   ],
   imports: [
     BrowserModule,
