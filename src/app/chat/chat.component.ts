@@ -26,7 +26,12 @@ export class ChatComponent implements AfterViewChecked, AfterViewInit {
   }
 
   private scrollToBottom(): void {
-    this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
+    try {
+      this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
+    } catch (error) {
+      
+    }
+    
   }
 
   public sendMessage(): void {
