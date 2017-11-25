@@ -1,6 +1,7 @@
-<ul class="list-group">
+<ul class="list-group messageList" #scrollMe>
   <app-chat-item [message]="messageObj" *ngFor="let messageObj of messages"></app-chat-item>
 </ul>
+
 
 <textarea placeholder="Write your message here" rows="5" [(ngModel)]="insertedMessage"></textarea>
 <button class="btn btn-primary" (click)="sendMessage()">Send</button>

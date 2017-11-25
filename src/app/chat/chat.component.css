@@ -3,7 +3,7 @@ textarea {
     resize: vertical;
 }
 
-ul {
+.messageList {
     max-height: 500px;
     overflow-x: scroll;
 }
