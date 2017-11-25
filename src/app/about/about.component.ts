@@ -16,7 +16,8 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this._connectionService.getUsers().subscribe(
-      res => console.log(res);
+      res => this.users = res,
+      err => console.error(err)
     );
   }
 
