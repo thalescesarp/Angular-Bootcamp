@@ -8,15 +8,24 @@ import { ChatService } from '../chat/chat.service';
 })
 export class ChatComponent implements OnInit {
 
-  public messages: string[] = [];
+  public messages: any[] = [];
   public insertedMessage: string = '';
 
-  constructor (chatService: ChatService) {
+  constructor (private _chatService: ChatService) {
+    this._chatService.chatServer.on('messages', m => this.messages.push(m));
   }
 
   public sendMessage(): void {
+
+    let messageObj = {
+      message: this.insertedMessage,
+      author: this._chatService.userName
+    };
+
+    this._chatService.chatServer.emit('messages', messageObj);
+
     if(this.insertedMessage) {
-      this.messages.push(this.insertedMessage);
+      this.messages.push(messageObj);
     }
 
     this.insertedMessage = '';
