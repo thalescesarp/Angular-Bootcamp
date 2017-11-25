@@ -9,8 +9,15 @@ export class ChatService {
     return this.user;
   }
 
-  constructor() { 
-    this.user = prompt("What is your name?");
+  constructor() {
+    let storedName: string = localStorage.getItem('name');
+    
+    if (!storedName) {
+      this.user = prompt("What is your name?");
+      localStorage.setItem('name', this.user);
+    } else {
+      this.user = storedName;
+    }
   }
 
 }
