@@ -4,25 +4,29 @@ import * as io from 'socket.io-client';
 @Injectable()
 export class ChatService {
 
-  private user: string = '';
-  private serverURL: string = 'http://bootcamp.us-east-1.elasticbeanstalk.com/';
-  private server: any;
+  private _user: string = '';
+  private _serverURL: string = 'http://172.24.30.24:3000/';
+  private _server: any;
 
   get userName(): string {
-    return this.user;
+    return this._user;
+  }
+
+  get chatServer(): any {
+    return this._server;
   }
 
   constructor() {
     let storedName: string = sessionStorage.getItem('name');
     
     if (!storedName) {
-      this.user = prompt("What is your name?");
-      sessionStorage.setItem('name', this.user);
+      this._user = prompt("What is your name?");
+      sessionStorage.setItem('name', this._user);
     } else {
-      this.user = storedName;
+      this._user = storedName;
     }
 
-    this.server = io(this.serverURL);
+    this._server = io(this._serverURL);
   }
 
 }
