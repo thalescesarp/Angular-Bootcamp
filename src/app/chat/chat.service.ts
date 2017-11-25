@@ -10,11 +10,11 @@ export class ChatService {
   }
 
   constructor() {
-    let storedName: string = localStorage.getItem('name');
+    let storedName: string = sessionStorage.getItem('name');
     
     if (!storedName) {
       this.user = prompt("What is your name?");
-      localStorage.setItem('name', this.user);
+      sessionStorage.setItem('name', this.user);
     } else {
       this.user = storedName;
     }
