@@ -8,8 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ChatItemComponent implements OnInit {
 
   @Input() public message: string;
+  public date: Date;
 
-  constructor() { }
+  constructor() {
+    this.date = new Date();
+   }
 
   ngOnInit() {
   }
