@@ -14,8 +14,8 @@ export class ChatItemComponent implements OnInit {
 
   constructor(chatService: ChatService) {
     this.date = new Date();
-    this.user = chatService.user;
-   }
+    this.user = chatService.userName;
+  }
 
   ngOnInit() {
   }
