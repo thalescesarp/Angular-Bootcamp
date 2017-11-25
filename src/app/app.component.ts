@@ -3,12 +3,17 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  messages = [
-    'Mensage 1',
-    'Mensage 1',
-    'Mensage 1'
-  ];
+  public messages: string[] = [];
+  public insertedMessage: string = '';
+
+  constructor () {
+  }
+
+  public sendMessage(): void {
+    this.messages.push(this.insertedMessage);
+    this.insertedMessage = '';
+  }
 }
