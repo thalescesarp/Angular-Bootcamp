@@ -24,10 +24,6 @@ export class ChatComponent implements OnInit {
 
     this._chatService.chatServer.emit('messages', messageObj);
 
-    if(this.insertedMessage) {
-      this.messages.push(messageObj);
-    }
-
     this.insertedMessage = '';
   }
 
