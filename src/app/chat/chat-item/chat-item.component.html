@@ -1,4 +1,4 @@
-<li class="list-group-item">
+<li class="list-group-item" [ngClass]='{"my-message": isMyMessage()}'>
   <p>{{message['author']}}</p>
   <p>{{message['message']}}</p>
   <p>{{message['time']}}</p>

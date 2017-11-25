@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ChatService } from "../chat.service";
 
 @Component({
   selector: 'app-chat-item',
@@ -9,7 +10,11 @@ export class ChatItemComponent implements OnInit {
 
   @Input() public message: Object;
 
-  constructor() {
+  constructor(private _chatService: ChatService) {
+  }
+
+  public isMyMessage(): boolean {
+    return this.message['author'] === this._chatService.userName;
   }
 
   ngOnInit() {
