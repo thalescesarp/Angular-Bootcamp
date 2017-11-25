@@ -8,6 +8,8 @@ import { ChatComponent } from './chat/chat.component';
 import { ChatItemComponent } from './chat/chat-item/chat-item.component';
 import { ChatService } from './chat/chat.service';
 import { ChatHeaderComponent } from './chat/chat-header/chat-header.component';
+import { routing } from "./app.routes";
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -15,11 +17,13 @@ import { ChatHeaderComponent } from './chat/chat-header/chat-header.component';
     AppComponent,
     ChatComponent,
     ChatItemComponent,
-    ChatHeaderComponent
+    ChatHeaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    routing
   ],
   providers: [ChatService],
   bootstrap: [AppComponent]
