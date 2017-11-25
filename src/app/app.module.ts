@@ -10,6 +10,8 @@ import { ChatService } from './chat/chat.service';
 import { ChatHeaderComponent } from './chat/chat-header/chat-header.component';
 import { routing } from "./app.routes";
 import { AboutComponent } from './about/about.component';
+import { ConnectionService } from "./connection.service";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -23,9 +25,10 @@ import { AboutComponent } from './about/about.component';
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    HttpClientModule
   ],
-  providers: [ChatService],
+  providers: [ChatService, ConnectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
